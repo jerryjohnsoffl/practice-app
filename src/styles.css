@@ -44,6 +44,10 @@ header.night-mode {
   background-color: #000;
 }
 
+header.night-mode .nav a {
+  color: #fff;
+}
+
 .hero {
   background-color: lightskyblue;
   padding: 20px;
