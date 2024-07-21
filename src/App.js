@@ -3,8 +3,15 @@ import Header from "./components/header";
 import Hero from "./components/hero";
 import Footer from "./components/footer";
 import Card from "./components/card";
+import cardData from "./components/cardComponents"
 
 function MyApp() {
+  let num = [1,2,3,4,5,6];
+  let result = num.map((number)=>{
+    let doubleNumbers = number * 2;
+    return doubleNumbers;
+  })
+  console.log(result);
   return (
     <div>
       <Header />
