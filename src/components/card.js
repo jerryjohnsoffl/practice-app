@@ -7,11 +7,13 @@ function Card(props) {
   let activeClass = useState("");
   let [classState, setClassState] = activeClass;
 
-  function addToFavorites() {
+  function addToFavorites(imgSrc) {
     setBtnText((prevState)=>{
       if(prevState==="Add to favorites") {
+        props.getFavImages(imgSrc);
         return "Added to favorites";
       } else {
+        props.removeImages(imgSrc)
         return "Add to favorites";
       }
     });
@@ -29,7 +31,9 @@ function Card(props) {
       <img src={props.imgSrc} alt="" />
       <h3>{props.name}</h3>
       <p className="description">{props.description}</p>
-      <button onClick={addToFavorites} className="button">{btnText}</button>
+      <button onClick={()=> {
+        addToFavorites(props.imgSrc)
+      }} className="button">{btnText}</button>
     </div>
   );
 };
